@@ -1,0 +1,33 @@
+#container{
+    width: 240px;
+    height: 450px;
+    padding: 10px;
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.first.row .key{
+    border-radius: 32px;
+    
+}
+
+.key{
+    width: 60px;
+    height: 32px;
+    border-radius: 8px;
+}
+.sign{
+    margin-left: auto;
+}
+.keys{
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
