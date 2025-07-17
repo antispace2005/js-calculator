@@ -32,9 +32,9 @@ function operate(equal = false) {
             result = multiply(a, b)
         } else if (operator == "/") {
             result = divide(a, b)
-            if (b = '0'){
+            if (b == '0'){
                 clearKeyAction()
-                result="Oops, you can't divide by zero"
+                result="Oops"
             }
         } else return;
         numbers[1] = "0"
@@ -44,7 +44,7 @@ function operate(equal = false) {
         currentNumber = 1;
         decimal = false;
     }
-    display.textContent = result;
+    display.textContent = (result+"").substring(0,8);
     if(equal){lastPressIsEqual = true}
     numbers[0] = result;
 }
@@ -64,7 +64,7 @@ function numberKeysAction(e) {
 
     }
 
-    display.textContent = numbers[currentNumber]
+    display.textContent = (numbers[currentNumber]+"").substring(0,8)
 
 }
 function decimalKeyAction(e) {
@@ -74,7 +74,7 @@ function decimalKeyAction(e) {
     }
     if (decimal) return;
     numbers[currentNumber] += "."
-    display.textContent = numbers[currentNumber]
+    display.textContent = (numbers[currentNumber]+"").substring(0,8)
     decimal = true;
 }
 function operatorKeyAction(e) {
@@ -87,7 +87,7 @@ function operatorKeyAction(e) {
 function deleteKeyAction(e) {
     numbers[currentNumber] = numbers[currentNumber].slice(0, -1);
     if (numbers[currentNumber] == "") numbers[currentNumber] = '0';
-    display.textContent = numbers[currentNumber]
+    display.textContent = (numbers[currentNumber]+"").substring(0,8)
 
 }
 
@@ -96,7 +96,7 @@ function clearKeyAction(e) {
     decimal = false;
     currentNumber = 0
     operator = ""
-    display.textContent = numbers[currentNumber]
+    display.textContent = (numbers[currentNumber]+"").substring(0,8)
 
 
 }

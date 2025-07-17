@@ -18,10 +18,17 @@
     
 }
 
+.screen{
+    height: 60px;
+    font-size: 62px;
+}
+
 .key{
     width: 60px;
-    height: 32px;
+    height: 60px;
     border-radius: 8px;
+    border: 0;
+    background-color: darkcyan;
 }
 .sign{
     margin-left: auto;
