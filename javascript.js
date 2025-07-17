@@ -64,6 +64,10 @@ function numberKeysAction(e) {
 
 }
 function decimalKeyAction(e) {
+    if (lastPressIsEqual){
+        clearKeyAction()
+        lastPressIsEqual = false
+    }
     if (decimal) return;
     numbers[currentNumber] += "."
     display.textContent = numbers[currentNumber]
@@ -116,7 +120,7 @@ function initKeys() {
     deleteKey.addEventListener('click', deleteKeyAction)
 
     const clearKey = document.querySelector(".clear")
-    deleteKey.addEventListener('click', clearKeyAction)
+    clearKey.addEventListener('click', clearKeyAction)
 }
 
 initKeys()
