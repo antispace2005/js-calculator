@@ -32,6 +32,10 @@ function operate(equal = false) {
             result = multiply(a, b)
         } else if (operator == "/") {
             result = divide(a, b)
+            if (b = '0'){
+                clearKeyAction()
+                result="Oops, you can't divide by zero"
+            }
         } else return;
         numbers[1] = "0"
         decimal = false;
